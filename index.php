@@ -46,7 +46,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logo1.png" alt="" style="max-width: 200%; height:auto;">
         <h1>Unit Kesehatan | Daop 7 Madiun </h1>
@@ -55,8 +55,8 @@
       <!-- <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> -->
       <nav id="navbar" class="navbar" style="color:red">
         <ul>
-          <li><a href="index.php" class="active">Home</a></li>
-          <!-- <li><a href="login.php">Login</a></li> -->
+          <li><a href="index.html" class="active">Home</a></li>
+          <!-- <li><a href="login.html">Login</a></li> -->
           <li><a href="#gallery">gallery</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -122,7 +122,7 @@
             <!-- <ul>
               <li>Data & foto management</li>
             </ul> -->
-            <a href="human-capital/coba.php" class="readmore stretched-link"></a>
+            <a href="human-capital/coba.html" class="readmore stretched-link"></a>
           </div>
         </div><!-- End Service Item -->
 
@@ -216,15 +216,6 @@
       </div>
     </section><!-- End Services Section -->
 
-    <?php
-    // Include file koneksi ke database
-    include 'koneksi.php';
-
-    // Query untuk mengambil data gambar dari database
-    $query = "SELECT * FROM tb_gambar";
-    $result = mysqli_query($conn, $query);
-    ?>
-
     <section id="projects" class="projects">
       <div class="container" data-aos="fade-up">
         <div class="section-header" id="gallery">
@@ -235,21 +226,14 @@
         </a><br><br>
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
           <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
-            <?php
-            // Loop untuk menampilkan gambar-gambar dalam galeri
-            while ($row = mysqli_fetch_assoc($result)) {
-
-
-            ?>
               <!-- <img style="width:100px; height: 100px;" src="gambar_gallery/<?php echo $row['gambar']; ?>" /> -->
               <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                 <div class="portfolio-content h-100">
                   <img class="fixed-size" style="width:100%; height: 100;" src="gambar_gallery/<?php echo $row['gambar']; ?>" />
                   <div class="portfolio-info">
-                    <a href="gambar_gallery/<?php echo $row['gambar']; ?>" title="Download Gambar" download><i class="bi bi-download"></i></a>
-
-                    <a href="gambar_gallery/<?php echo $row['gambar']; ?>" title="Kegiatan: <?php echo $row['nama_kegiatan']; ?><br> Tanggal: <?php echo date('d-m-Y', strtotime($row['tanggal'])); ?>" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="#" onclick="confirmDelete(<?php echo $row['id']; ?>)" title="Hapus Gambar" class="delete-link"><i class="bi bi-trash"></i></a>
+                    <a href="assets/img/depan/6.jpeg" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link">
+                    <a href="assets/img/depan/6.jpeg" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link">
+                    <a href="assets/img/depan/6.jpeg" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link">
                     <script>
                       function confirmDelete(id) {
                         var confirmDelete = confirm("Apakah Anda yakin ingin menghapus gambar?");
@@ -266,9 +250,6 @@
               </div><!-- End Projects Item -->
 
               <!-- End Projects Item -->
-            <?php
-            }
-            ?>
           </div><!-- End Projects Container -->
         </div>
       </div>
@@ -345,6 +326,7 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+
 
 
 </html>
